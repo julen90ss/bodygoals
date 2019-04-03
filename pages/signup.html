@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../stylesheet.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper teal lighten-2">
+                <a href="#" class="brand-logo"><img src="../logo.jpeg"></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="changing" href="#">Home</a></li>
+                    <li><a class="changing" href="#">Services</a></li>
+                    <li><a class="changing" href="#">Contact</a></li>
+                    <li><a class="changing" href="#">Videos</a></li>
+                    <li><a class="changing" href="#">bodycamp</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="sass.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="collapsible.html">Contact</a></li>
+        <li><a href="video.html">Videos</a></li>
+    </ul>
+    <div class="container">
+        <h1>Sign up</h1>
+        <div class="row">
+            <form class="col s12" action="https://formcarry.com/s/1gjkCjZeivi" method="POST" accept-charset="UTF-8">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Jack" id="first_name" type="text" name="first" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Sparrow" id="last_name" type="text"name="last" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Jacksparrow@pirates.com" id="email"name="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                 
+                        <input type="text" id="message" name="message" placeholder="I love rum">       
+                        <label for="Message">Message</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                      </button>
+            </form>
+        </div>
+    </div>
+    <footer class="page-footer red accent-2">
+        <div class="container section contact">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="black-text">Contact</h5>
+                    <p class="black-text">Yelp, Facebook, Instagram.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="black-text">Links</h5>
+                    <ul>
+                        <li><a class="black-text" href="#!">Facebook</a></li>
+                        <li><a class="black-text" href="#!">Instagram: @bodygoalsbykelly</a></li>
+                        <li><a class="black-text" href="#!">Yelp</a></li>
+                        <li><a class="black-text" href="#!">Email:bodygoalsbykelly@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright teal lighten-2">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="https://julen90ss.github.io">By Jay.AKA.Jota</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <!-- SCRIPT IS ALAAAAaWAYS AT THE BOTTOM -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+            $(function(){
+                $("form").submit(function(e){
+                    e.preventDefault();
+                    var href = $(this).attr("action");
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: href,
+                        data: $(this).serialize(),
+                        success: function(response){
+                            if(response.status == "success"){
+                                window.location.href="http://bodygoalsbykelly.com"
+                            }else{
+                                alert("An error occured: " + response.message);
+                            }
+                        }
+                    });
+                });
+            });
+            </script>
+            
+
+</body>
+
+</html>

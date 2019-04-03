@@ -22,3 +22,6 @@ video{
     margin: auto;
     display: block;
 }
+.card{
+    height: 350px;
+}
